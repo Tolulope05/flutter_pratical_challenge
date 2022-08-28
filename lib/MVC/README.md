@@ -53,3 +53,5 @@ The Underlying Lesson
 There is a very useful lesson that MVC brings: Separation Of Concerns. Meaning that you should separate different responsibilities into different sections of your application.
 
 This is a tenant that comes up in OOP over and over again. We talk about it with SOLID’s Single Responsibility Principle. Actually, all of the SOLID principles are directly related to separating concerns from one another (all 5 principles are really just different angles of the same concept).
+
+> One example in server-side usage, is that the View cannot actually render anything. Since it’s on the server, all it can do is output instructions (HTML, or some other intermediary) which the client will then render. This is an extremely important difference because it means that the View cannot be stateful of its representation. Therefore, if the View wants to change something it has already rendered, it cannot. And as such, the entire premise of MVC falls flat.
