@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import '../../screens/bottom_bar_screen.dart';
+
+class OnBoardThree extends StatelessWidget {
+  const OnBoardThree({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset(
+                "assets/images/onboard_3.png",
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 35.0, right: 35.0, left: 35.0, bottom: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Acepta nuestras politicas  para recibir una experiencia personalizada 😊",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Color(0xff131313),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    "Politicas de Privacidad",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Color(0xff131313),
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    "Politicas de Partners",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Color(0xff131313),
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
