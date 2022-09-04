@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../screens/bottom_bar_screen.dart';
 
 class OnBoardThree extends StatelessWidget {
   const OnBoardThree({Key? key}) : super(key: key);
@@ -12,15 +11,15 @@ class OnBoardThree extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(10.0),
-              child: Image.asset(
-                "assets/images/onboard_3.png",
+              child: Image.network(
+                "https://source.unsplash.com/random",
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 35.0, right: 35.0, left: 35.0, bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 35.0, right: 35.0, left: 35.0, bottom: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [

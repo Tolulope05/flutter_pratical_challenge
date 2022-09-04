@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:viajes/consts/colors.dart';
-import 'package:viajes/screens/profile_screen_edit.dart';
-import 'package:viajes/widgets/app_bar.dart';
-import 'package:viajes/widgets/profile_card.dart';
-
-import '../widgets/drop_down_list.dart';
 
 // this is an profile screen that sets state of properties on each tap
+// From Viajes Project: Last portfolio work from Julitech Solutions.
 
 class ProfileScreen extends StatefulWidget {
-  ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -22,7 +17,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ViajesBarWidget(),
       body: Container(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -31,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               GestureDetector(
                 onTap: () => Navigator.pop(context),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Icon(Icons.arrow_back_ios_rounded),
                 ),
@@ -39,8 +33,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Row(
                 children: [
                   const SizedBox(width: 10),
-                  Image.asset(
-                    "assets/images/profile.png",
+                  Image.network(
+                    "https://source.unsplash.com/random",
                     height: 130,
                     width: 90,
                   ),
@@ -82,12 +76,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   IconButton(
                     onPressed: () {
                       //navigate
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => ProfileScreenEdit()),
-                      );
                     },
-                    icon: Image.asset(
-                      'assets/images/edit.png',
+                    icon: Image.network(
+                      'https://source.unsplash.com/random',
                       height: 25,
                       width: 25,
                     ),
@@ -132,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Icon(
                               Icons.favorite_border,
                               color: currentScreen == 0
-                                  ? primaryColor
+                                  ? Colors.greenAccent
                                   : Colors.black,
                             ),
                             const SizedBox(height: 5),
@@ -141,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: currentScreen == 0
-                                    ? primaryColor
+                                    ? Colors.greenAccent
                                     : Colors.black,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
@@ -188,14 +179,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: Image.asset("assets/images/flag_2.png"),
+                              child: Icon(
+                                Icons.time_to_leave,
+                                color: currentScreen == 1
+                                    ? Colors.greenAccent
+                                    : Colors.black,
+                              ),
                             ),
                             const SizedBox(height: 5),
-                            const Text(
+                            Text(
                               "Cambiar \nOrigen",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Color(0xff131313),
+                                color: currentScreen == 1
+                                    ? Colors.greenAccent
+                                    : Colors.black,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -237,7 +235,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Icon(
                               Icons.notifications_active_outlined,
                               color: currentScreen == 2
-                                  ? primaryColor
+                                  ? Colors.greenAccent
                                   : Colors.black,
                             ),
                             const SizedBox(height: 5),
@@ -246,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: currentScreen == 2
-                                    ? primaryColor
+                                    ? Colors.greenAccent
                                     : Colors.black,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
@@ -260,8 +258,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               const SizedBox(height: 34),
-              if (currentScreen == 0) ProfileCardWidget(),
-              if (currentScreen == 1) DropDownList(),
+              if (currentScreen == 0) Center(child: Text(" Demo Tab 1")),
+              if (currentScreen == 1) Center(child: Text(" Drop down list 2")),
               if (currentScreen == 2)
                 SwitchListTile(
                   title: const Text(
@@ -287,13 +285,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   value: _notificationSwitch,
                   activeColor: const Color(0xfffead0b),
                 ),
-
-              // currentScreen ==0 ?  Column(
-              //     children: const [
-              //       ProfileCardWidget(),
-              //       SizedBox(height: 10),
-              //     ],
-              //   ) :  DropDownList(),
             ],
           ),
         ),

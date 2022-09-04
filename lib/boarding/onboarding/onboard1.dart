@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../screens/onboarding/onboard2.dart';
+import './onboard2.dart';
 
 class OnBoardOne extends StatelessWidget {
   const OnBoardOne({Key? key}) : super(key: key);
@@ -14,8 +14,8 @@ class OnBoardOne extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(10.0),
-                child: Image.asset(
-                  "assets/images/onboard_1.png",
+                child: Image.network(
+                  "https://source.unsplash.com/random",
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),

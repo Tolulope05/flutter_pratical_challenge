@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:viajes/consts/colors.dart';
-import 'package:viajes/screens/bottom_bar_screen.dart';
 
 import 'onboard1.dart';
 import 'onboard2.dart';
@@ -49,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               children: [
                 TabPageSelector(
                   controller: controller,
-                  selectedColor: primaryColor,
+                  selectedColor: Colors.greenAccent,
                   color: Colors.grey[300],
                   borderStyle: BorderStyle.none,
                 ),
@@ -58,7 +56,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: ((context) => const BottomBarScreen()),
+                        builder: ((context) => const Scaffold(
+                              body: Center(child: Text("This is Home!")),
+                            )),
                       ),
                     );
                   },
