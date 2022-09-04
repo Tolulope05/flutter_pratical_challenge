@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pratical_challenge/MVC/enum/working_with_enums.dart';
 
 import 'boarding/onboarding/onboarding.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnboardingScreen(),
+      home: const Enumscreen(),
       debugShowCheckedModeBanner: false,
     );
   }
