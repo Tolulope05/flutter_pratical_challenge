@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './onboard2.dart';
-
 class OnBoardOne extends StatelessWidget {
   const OnBoardOne({Key? key}) : super(key: key);
 

@@ -41,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -51,7 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   color: Colors.grey[300],
                   borderStyle: BorderStyle.none,
                 ),
-                SizedBox(width: 40),
+                const SizedBox(width: 40),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
@@ -100,7 +100,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       fontWeight: FontWeight.w600,
                     ),
                   )
-                : SizedBox(height: 10),
+                : const SizedBox(height: 10),
             const SizedBox(height: 20),
           ],
         ),
