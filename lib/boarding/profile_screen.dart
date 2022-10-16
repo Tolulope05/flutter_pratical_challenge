@@ -258,8 +258,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               const SizedBox(height: 34),
-              if (currentScreen == 0) Center(child: Text(" Demo Tab 1")),
-              if (currentScreen == 1) Center(child: Text(" Drop down list 2")),
+              if (currentScreen == 0) const Center(child: Text(" Demo Tab 1")),
+              if (currentScreen == 1)
+                const Center(child: Text(" Drop down list 2")),
               if (currentScreen == 2)
                 SwitchListTile(
                   title: const Text(

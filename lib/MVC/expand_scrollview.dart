@@ -15,7 +15,7 @@ class CustomScrollViewExample extends StatelessWidget {
             child: Column(
               children: [
                 Flexible(child: Container()),
-                Text("Hello Tolulope"),
+                const Text("Hello Tolulope"),
                 Expanded(child: Container()),
               ],
             ),

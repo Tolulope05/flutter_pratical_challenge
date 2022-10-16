@@ -79,7 +79,7 @@ class _ShimmerScreenState extends State<ShimmerScreen> {
 
   Future? changeWidget() {
     someWidget = loaderList();
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 4), () {
       setState(() {
         someWidget = randomList();
       });
