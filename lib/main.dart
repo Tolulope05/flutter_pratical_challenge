@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'shimmer/shimmer_screen.dart';
+import '03_shimmer_effect/shimmer_screen.dart';
 
 void main() {
   runApp(const MyApp());
