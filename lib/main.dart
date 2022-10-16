@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pratical_challenge/MVC/enum/working_with_enums.dart';
 
-import 'boarding/onboarding/onboarding.dart';
+import 'shimmer/shimmer_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Enumscreen(),
+      home: const ShimmerScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

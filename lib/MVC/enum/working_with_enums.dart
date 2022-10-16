@@ -36,11 +36,11 @@ class Enumscreen extends StatelessWidget {
 }
 
 enum Number {
-  ONE,
-  TWO,
-  THREE,
-  FOUR,
-  FIVE,
+  ONE, // value of 0
+  TWO, // value of 1
+  THREE, // value of 2
+  FOUR, // value of 3
+  FIVE, // value of 4
 }
 
 class NumberSelect {
