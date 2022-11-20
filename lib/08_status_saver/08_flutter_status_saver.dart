@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
 class StatusSaverConstants {
   static String WHATSAPP_BUSINESS_PATH =
@@ -92,12 +93,20 @@ class StatusSaver extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    StatusSaverNotifier controller = Provider.of<StatusSaverNotifier>(context);
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Whatsapp Status Saver"),
-      ),
-    );
+        backgroundColor: Colors.grey.shade200,
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text("Whatsapp Status Saver"),
+        ),
+        body: SingleChildScrollView(
+          child: ListView.builder(
+            itemCount: 5,
+            itemBuilder: ((context, index) {
+              return Container();
+            }),
+          ),
+        ));
   }
 }
