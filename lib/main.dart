@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pratical_challenge/08_status_saver/08_flutter_status_saver.dart';
 import 'package:provider/provider.dart';
 
 import '07_flutter_filter_data/07_flutter_filter_data.dart';
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider<FilterDataNotifier>(
-            create: (_) => FilterDataNotifier(),
+          ChangeNotifierProvider<StatusSaverNotifier>(
+            create: (_) => StatusSaverNotifier(),
           ),
         ],
         builder: (context, widget) {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const FlutterFilterDataView(),
+            home: const StatusSaver(),
             debugShowCheckedModeBanner: false,
           );
         });
