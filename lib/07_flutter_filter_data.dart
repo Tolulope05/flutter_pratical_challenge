@@ -6,7 +6,7 @@ class FakeData {
   final String category;
 
   const FakeData({required this.title, required this.category});
-}
+} // Model
 
 class FilterDataNotifier extends ChangeNotifier {
   List<String> categories = ["animal", "bird", "fish"];
@@ -79,9 +79,9 @@ class FlutterFilterDataView extends StatelessWidget {
     List<String> categories = filterDataNotifier(renderUI: false).categories;
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Colors.black54,
       appBar: AppBar(
-          backgroundColor: Colors.grey.shade600,
+          backgroundColor: Colors.grey.shade800,
           title: const Text("Flutter Filter mode")),
       floatingActionButton: filterDataNotifier(renderUI: true).isFilterMode
           ? FloatingActionButton(
@@ -110,8 +110,11 @@ class FlutterFilterDataView extends StatelessWidget {
                             filterDataNotifier(renderUI: true).query ==
                                     categories[index]
                                 ? Colors.blue
-                                : Colors.yellow,
-                        label: Text(categories[index]),
+                                : Colors.grey,
+                        label: Text(
+                          categories[index],
+                          style: const TextStyle(color: Colors.white),
+                        ),
                         onPressed: () {
                           filterDataNotifier(renderUI: false)
                               .setQuery(kValue: categories[index]);
@@ -127,7 +130,11 @@ class FlutterFilterDataView extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 FakeData fakeData = data[index];
                 return ListTile(
-                  leading: const Icon(Icons.animation),
+                  textColor: Colors.white,
+                  leading: const Icon(
+                    Icons.animation,
+                    color: Colors.white,
+                  ),
                   title: Text(fakeData.title),
                   subtitle: Text(fakeData.category),
                 );

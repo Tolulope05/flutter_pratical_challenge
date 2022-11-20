@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '03_shimmer_effect/shimmer_screen.dart';
+import '07_flutter_filter_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const ShimmerScreen(),
-      debugShowCheckedModeBanner: false,
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<FilterDataNotifier>(
+            create: (_) => FilterDataNotifier(),
+          ),
+        ],
+        builder: (context, widget) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: const FlutterFilterDataView(),
+            debugShowCheckedModeBanner: false,
+          );
+        });
   }
 }
