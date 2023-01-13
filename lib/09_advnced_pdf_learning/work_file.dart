@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+class TesTFile extends StatelessWidget {
+  const TesTFile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> familyMembers = [
+      "Tolulope",
+      "Fakunle",
+      "Oluwayomi",
+      "Oluwafil=kemi",
+      "Mayowa Joseph"
+    ];
+
+    familyMembers.map((member) {
+      return (member.toUpperCase());
+    }).forEach((member) {
+      print("${member}: ${member.length}");
+    });
+    return Scaffold();
+  }
+}
