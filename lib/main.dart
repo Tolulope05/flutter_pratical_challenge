@@ -4,7 +4,6 @@ import 'package:flutter_pratical_challenge/09_advnced_pdf_learning/work_file.dar
 import 'package:provider/provider.dart';
 
 import '10_belzier_curve/10_belzier_curve.dart';
-import '10_belzier_curve/folder_painter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const CustomFolder(),
+            home: const BelzierCurve(),
           );
         });
   }
