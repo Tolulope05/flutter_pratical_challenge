@@ -1,13 +1,37 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MaterialApp(home: BelzierCurve()));
-}
-
-class BelzierCurve extends StatelessWidget {
+class BelzierCurve extends StatefulWidget {
   const BelzierCurve({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<BelzierCurve> createState() => _BelzierCurveState();
+}
+
+class _BelzierCurveState extends State<BelzierCurve>
+    with SingleTickerProviderStateMixin {
+  double angle = 0;
+  changeAngle(String direction) async {
+    await controller.forward();
+    setState(() {
+      if (direction == 'FRONT') {
+        angle += 1;
+      } else {
+        angle -= 1;
+      }
+    });
+    await controller.reverse();
+  }
+
+  late AnimationController controller;
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 300), value: 0);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,17 +42,39 @@ class BelzierCurve extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: SizedBox(
-          height: 60,
+          height: 200,
           width: MediaQuery.of(context).size.width * 0.9,
           child: Stack(
             children: [
-              SizedBox(
-                height: 50,
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: CustomPaint(
-                  painter: OvalArc(),
+              Positioned(
+                bottom: 10,
+                child: SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  child: CustomPaint(
+                    painter: OvalArc(),
+                  ),
                 ),
               ),
+              AnimatedBuilder(
+                  animation: controller,
+                  builder: (context, child) {
+                    return Transform(
+                      transform: Matrix4.rotationY(angle * (pi / 2)),
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: MediaQuery.of(context).size.height - 130,
+                        alignment: Alignment.center,
+                        child: Center(
+                          child: Image.asset(
+                            'assets/shoe.png',
+                            width: 200,
+                            height: 200,
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
@@ -42,14 +88,20 @@ class BelzierCurve extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.chevron_left,
-                        color: Colors.white,
+                    children: [
+                      InkWell(
+                        onTap: () => changeAngle('BACK'),
+                        child: const Icon(
+                          Icons.chevron_left,
+                          color: Colors.white,
+                        ),
                       ),
-                      Icon(
-                        Icons.chevron_right,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: () => changeAngle('FRONT'),
+                        child: const Icon(
+                          Icons.chevron_right,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -64,6 +116,8 @@ class BelzierCurve extends StatelessWidget {
 }
 
 class OvalArc extends CustomPainter {
+  OvalArc();
+
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint();
@@ -84,40 +138,40 @@ class OvalArc extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
-class FolderPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint();
-    Path path = Path();
-    double top = 20.0;
-    double border1 = 20.0;
-    double border2 = 6.0;
-    double dst1 = size.width * .62;
-    double dst2 = size.width * .62 - 19;
+// class FolderPainter extends CustomPainter {
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     Paint paint = Paint();
+//     Path path = Path();
+//     double top = 20.0;
+//     double border1 = 20.0;
+//     double border2 = 6.0;
+//     double dst1 = size.width * .62;
+//     double dst2 = size.width * .62 - 19;
 
-    paint.color = Colors.blue;
-    paint.style = PaintingStyle.stroke;
-    paint.style = PaintingStyle.fill;
-    paint.strokeWidth = 1;
+//     paint.color = Colors.blue;
+//     paint.style = PaintingStyle.stroke;
+//     paint.style = PaintingStyle.fill;
+//     paint.strokeWidth = 1;
 
-    path.moveTo(border1, 0);
-    path.quadraticBezierTo(0, 0, 0, border1);
-    path.lineTo(0, size.height - border1);
-    path.quadraticBezierTo(0, size.height, border1, size.height);
-    path.lineTo(size.width - border1, size.height);
-    path.quadraticBezierTo(
-        size.width, size.height, size.width, size.height - border1);
-    path.lineTo(size.width, top + border1);
-    path.quadraticBezierTo(size.width, top, size.width - border1, top);
-    path.lineTo(dst1 + border2, top);
-    path.quadraticBezierTo(dst1, top, dst1 - border2, top - border2);
-    path.lineTo(dst2 + border2, 0 + border2);
-    path.quadraticBezierTo(dst2, 0, dst2 - border2, 0);
-    canvas.drawPath(path, paint);
-  }
+//     path.moveTo(border1, 0);
+//     path.quadraticBezierTo(0, 0, 0, border1);
+//     path.lineTo(0, size.height - border1);
+//     path.quadraticBezierTo(0, size.height, border1, size.height);
+//     path.lineTo(size.width - border1, size.height);
+//     path.quadraticBezierTo(
+//         size.width, size.height, size.width, size.height - border1);
+//     path.lineTo(size.width, top + border1);
+//     path.quadraticBezierTo(size.width, top, size.width - border1, top);
+//     path.lineTo(dst1 + border2, top);
+//     path.quadraticBezierTo(dst1, top, dst1 - border2, top - border2);
+//     path.lineTo(dst2 + border2, 0 + border2);
+//     path.quadraticBezierTo(dst2, 0, dst2 - border2, 0);
+//     canvas.drawPath(path, paint);
+//   }
 
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
-}
+//   @override
+//   bool shouldRepaint(CustomPainter oldDelegate) {
+//     return true;
+//   }
+// }
