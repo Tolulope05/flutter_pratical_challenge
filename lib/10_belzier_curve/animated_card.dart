@@ -40,10 +40,6 @@ class _CardWidgetState extends State<CardWidget>
 
     cardFront = Image.asset("assets/card_front.jpg");
     cardBack = Image.asset("assets/card_back.png");
-    // cardFront =
-    //     Image.network("https://alex.domenici.net/media/1206/card-front.png");
-    // cardBack =
-    //     Image.network("https://alex.domenici.net/media/1207/card-back.png");
 
     // Initialize the animation controller
     controller = AnimationController(
