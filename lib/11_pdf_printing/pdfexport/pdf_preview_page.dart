@@ -17,6 +17,8 @@ class PdfPreviewPage extends StatelessWidget {
       ),
       body: PdfPreview(
         build: (context) => makePdf(invoice),
+        canChangePageFormat: false,
+        canDebug: false,
       ),
     );
   }
