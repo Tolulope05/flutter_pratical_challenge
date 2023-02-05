@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pratical_challenge/08_status_saver/08_flutter_status_saver.dart';
-import 'package:flutter_pratical_challenge/09_advnced_pdf_learning/work_file.dart';
 import 'package:provider/provider.dart';
 
-import '10_belzier_curve/10_belzier_curve.dart';
+import '11_pdf_printing/pdf_printing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const BelzierCurve(),
+            home: const PdfPrinting(),
           );
         });
   }
