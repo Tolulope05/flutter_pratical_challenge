@@ -9,10 +9,10 @@ import '../pdf_printing.dart';
 
 Future<Uint8List> makePdf(Invoice invoice) async {
   final pdf = Document();
-  final imageLogo = MemoryImage(
-      (await rootBundle.load('assets/technical_logo.png'))
-          .buffer
-          .asUint8List());
+  // final imageLogo = MemoryImage(
+  //     (await rootBundle.load('assets/technical_logo.png'))
+  //         .buffer
+  //         .asUint8List());
   pdf.addPage(
     Page(
       build: (context) {
@@ -31,7 +31,8 @@ Future<Uint8List> makePdf(Invoice invoice) async {
                 SizedBox(
                   height: 150,
                   width: 150,
-                  child: Image(imageLogo),
+                  // child: Image(imageLogo),
+                  child: FlutterLogo(),
                 )
               ],
             ),

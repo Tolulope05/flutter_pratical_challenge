@@ -109,5 +109,3 @@ class LineItem {
 
   LineItem(this.description, this.cost);
 }
-
-// invoice hard coded
