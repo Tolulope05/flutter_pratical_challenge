@@ -90,7 +90,7 @@ class Invoice {
   final String customer;
   final String address;
   final String name;
-  final List<LineItem>? items;
+  final List<LineItem> items;
   Invoice({
     required this.customer,
     required this.address,
@@ -98,8 +98,8 @@ class Invoice {
     required this.name,
   });
   double totalCost() {
-    return items!
-        .fold(0, (previousValue, element) => previousValue + element.cost);
+    return items.fold(
+        0, (previousValue, element) => previousValue + element.cost);
   }
 }
 
