@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pratical_challenge/08_status_saver/08_flutter_status_saver.dart';
+import 'vertical_drag_animation/sign_up.dart';
 import 'package:provider/provider.dart';
-
-import '11_pdf_printing/pdf_printing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.green,
             ),
-            home: const PdfPrinting(),
+            home: const SignUp(),
           );
         });
   }
