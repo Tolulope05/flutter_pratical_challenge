@@ -1,4 +1,4 @@
-# flutter_pratical_challenge
+## flutter_pratical_challenge
 
 This is a project to test and expand my knowledge on the wonders in flutter
 
