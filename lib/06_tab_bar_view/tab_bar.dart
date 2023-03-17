@@ -68,4 +68,5 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-}
+
+// This is a customized tab bar
