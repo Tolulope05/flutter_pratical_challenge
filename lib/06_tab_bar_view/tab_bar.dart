@@ -55,18 +55,38 @@ class _HomeState extends State<Home> {
                 ),
                 tabs: const [
                   Tab(
-                    text: 'Individual',
+                    // text: 'Individual',
+                    child: Center(
+                      child: Text(
+                        "This is Tab 1",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                   Tab(
-                    text: 'Corporate',
+                    // text: 'Corporate',
+                    child: Center(
+                      child: Text(
+                        "This is Tab 2",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
           ),
         ),
+        body: TabBarView(children: [
+          Container(
+            color: Colors.blue,
+          ),
+          Container(
+            color: Colors.green,
+          )
+        ]),
       ),
     );
   }
-
+}
 // This is a customized tab bar
