@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'landed_content.dart';
+
 class OnboardContent extends StatefulWidget {
   const OnboardContent({super.key});
 
