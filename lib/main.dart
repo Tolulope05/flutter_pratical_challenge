@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pratical_challenge/08_status_saver/08_flutter_status_saver.dart';
+import 'package:flutter_pratical_challenge/15_gabby_aid_learning_pattern/one_custom_triangle_on_rect_card.dart';
 import 'package:provider/provider.dart';
-
-import '14_onboarding_custom_animation/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.green,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
-            home: const OnboardingScreen(),
+            home: const CustomTriangRectangleCard(),
           );
         });
   }
