@@ -16,27 +16,25 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
       child: Column(
         children: [
           Container(
+            margin: const EdgeInsets.only(top: kTextTabBarHeight),
             height: 150,
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.blueGrey,
+              color: const Color.fromARGB(255, 77, 119, 88),
             ),
             width: MediaQuery.of(context).size.width * 0.85,
             child: Stack(
               children: [
                 Align(
                   alignment: Alignment.topRight,
-                  child: Transform.rotate(
-                    angle: 0,
-                    child: SizedBox(
-                      height: 90,
-                      width: 130,
-                      child: CustomPaint(
-                        painter: TrianglePainter(),
-                        foregroundPainter: TrianglePainter(
-                          strokeColor: Colors.red,
-                        ),
+                  child: SizedBox(
+                    height: 90,
+                    width: 130,
+                    child: CustomPaint(
+                      painter: TrianglePainter(),
+                      foregroundPainter: TrianglePainter(
+                        strokeColor: Colors.red,
                       ),
                     ),
                   ),
