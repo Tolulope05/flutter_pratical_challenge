@@ -34,7 +34,7 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
                     child: CustomPaint(
                       painter: TrianglePainter(),
                       foregroundPainter: TrianglePainter(
-                        strokeColor: Colors.red,
+                        strokeColor: Colors.cyan,
                       ),
                     ),
                   ),
@@ -52,6 +52,17 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
                 ),
               ],
             ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: kTextTabBarHeight),
+            height: 150,
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: const Color.fromARGB(255, 77, 119, 88),
+            ),
+            width: MediaQuery.of(context).size.width * 0.85,
+            // child: ,
           ),
         ],
       ),
@@ -125,3 +136,5 @@ class TrianglePainter2 extends CustomPainter {
   @override
   bool shouldRepaint(TrianglePainter2 oldDelegate) => false;
 }
+
+//
