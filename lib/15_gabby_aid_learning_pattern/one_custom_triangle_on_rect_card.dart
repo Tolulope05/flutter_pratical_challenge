@@ -13,46 +13,48 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            height: 150,
-            width: MediaQuery.of(context).size.width * 0.85,
-            color: Colors.blueGrey,
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Transform.rotate(
-                    angle: 0,
-                    child: SizedBox(
-                      height: 90,
-                      width: 130,
-                      child: CustomPaint(
-                        painter: TrianglePainter(),
-                        foregroundPainter: TrianglePainter(
-                          strokeColor: Colors.red,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              height: 150,
+              width: MediaQuery.of(context).size.width * 0.85,
+              color: Colors.blueGrey,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Transform.rotate(
+                      angle: 0,
+                      child: SizedBox(
+                        height: 90,
+                        width: 130,
+                        child: CustomPaint(
+                          painter: TrianglePainter(),
+                          foregroundPainter: TrianglePainter(
+                            strokeColor: Colors.red,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    height: 90,
-                    width: 180,
-                    margin: const EdgeInsets.only(right: 8),
-                    child: CustomPaint(
-                      painter: TrianglePainter2(),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Container(
+                      height: 90,
+                      width: 180,
+                      margin: const EdgeInsets.only(right: 8),
+                      child: CustomPaint(
+                        painter: TrianglePainter2(),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
