@@ -59,10 +59,15 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Color.fromARGB(255, 68, 117, 81),
+              color: const Color.fromARGB(255, 68, 117, 81),
             ),
             width: MediaQuery.of(context).size.width * 0.85,
-            child: CustomPaint(),
+            child: CustomPaint(
+              painter: DemoPainter(),
+              child: const Text(
+                "Custom Pasinter",
+              ),
+            ),
           ),
         ],
       ),
@@ -137,4 +142,12 @@ class TrianglePainter2 extends CustomPainter {
   bool shouldRepaint(TrianglePainter2 oldDelegate) => false;
 }
 
-//
+class DemoPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    // TODO: implement paint
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
