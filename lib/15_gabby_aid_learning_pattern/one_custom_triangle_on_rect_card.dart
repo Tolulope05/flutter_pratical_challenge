@@ -145,7 +145,9 @@ class TrianglePainter2 extends CustomPainter {
 class DemoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
+    Paint paint = Paint()
+      ..color = Colors.orange
+      ..strokeWidth = 20.0;
   }
 
   @override
