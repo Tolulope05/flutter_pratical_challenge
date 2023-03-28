@@ -142,6 +142,40 @@ class TrianglePainter2 extends CustomPainter {
   bool shouldRepaint(TrianglePainter2 oldDelegate) => false;
 }
 
+class CommentPaint extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint()
+      ..style = PaintingStyle.fill
+      ..color = Colors.blue;
+
+    var path2 = Path();
+    const offset = 20.0;
+    const cutoff = 30.0;
+
+    path2.moveTo(0, offset);
+    path2.lineTo(0, size.height - cutoff - offset);
+    path2.quadraticBezierTo(
+        0, size.height - cutoff, offset, size.height - cutoff);
+    path2.lineTo(40, size.height - cutoff);
+    path2.moveTo(40, size.height - cutoff);
+    path2.lineTo(40, size.height);
+    path2.lineTo(120, size.height - cutoff);
+    path2.lineTo(size.width - offset, size.height - cutoff);
+    path2.quadraticBezierTo(size.width, size.height - cutoff, size.width,
+        size.height - cutoff - offset);
+    path2.lineTo(size.width, offset);
+    path2.quadraticBezierTo(size.width, 0, size.width - offset, 0);
+    path2.lineTo(offset, 0);
+    path2.quadraticBezierTo(0, 0, 0, offset);
+
+    canvas.drawPath(path2, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
 class DemoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
