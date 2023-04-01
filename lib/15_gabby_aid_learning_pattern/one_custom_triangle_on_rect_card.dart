@@ -32,8 +32,7 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
                     height: 90,
                     width: 130,
                     child: CustomPaint(
-                      painter: TrianglePainter(),
-                      foregroundPainter: TrianglePainter(
+                      painter: TrianglePainter(
                         strokeColor: Colors.cyan,
                       ),
                     ),
