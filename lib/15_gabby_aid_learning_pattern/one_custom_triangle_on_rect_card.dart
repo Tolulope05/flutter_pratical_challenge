@@ -59,11 +59,9 @@ class _CustomTriangRectangleCardState extends State<CustomTriangRectangleCard> {
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              // color: const Color.fromARGB(255, 68, 117, 81),
             ),
             width: MediaQuery.of(context).size.width * 0.85,
             child: CustomPaint(
-              // painter: DemoPainter(),
               painter: CommentPaint(),
             ),
           ),
