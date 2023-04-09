@@ -84,7 +84,7 @@ class DrawCustomPath extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Path pathone = Path()
       ..moveTo(0, 0)
-      // ..lineTo(100, 100)
+      ..lineTo(100, 100)
       ..lineTo(0, 100)
       ..lineTo(0, 0);
     Paint paint = Paint()
