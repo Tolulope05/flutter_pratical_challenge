@@ -12,26 +12,30 @@ class BasicPaint extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 30,
             child: CustomPaint(
               painter: DrawLine(),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 120,
             child: CustomPaint(
               painter: DrawRectangle(),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 100,
             child: CustomPaint(
               painter: DrawCustomPath(),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 100,
             child: CustomPaint(
               painter: DrawCircle(),
             ),
@@ -46,10 +50,11 @@ class DrawLine extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..strokeWidth = 20.00
+      ..strokeWidth = 10.00
       ..color = Colors.blue;
-    Offset initialLine = const Offset(50, 0);
-    Offset finalLine = const Offset(300, 0);
+    Size center = size / 2;
+    Offset initialLine = Offset(0, center.height);
+    Offset finalLine = Offset(size.width, center.height);
 
     /// draw paint
     canvas.drawLine(
@@ -68,7 +73,7 @@ class DrawLine extends CustomPainter {
 class DrawRectangle extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    Offset center = const Offset(150, 50);
+    Offset center = Offset(size.width / 2, 50);
     Paint paint = Paint()
       ..color = Colors.yellow
       ..strokeWidth = 20.0;
@@ -107,8 +112,7 @@ class DrawCustomPath extends CustomPainter {
 class DrawCircle extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // Size center = size / 2;
-    Size center = const Size(100, 100);
+    Size center = size / 2;
     Paint paint = Paint()..color = Colors.lime;
     canvas.drawCircle(
       Offset(center.width, center.height),
