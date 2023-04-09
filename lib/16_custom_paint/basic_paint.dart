@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -47,6 +48,13 @@ class BasicPaint extends StatelessWidget {
             height: 150,
             child: CustomPaint(
               painter: DrawobjectandText(),
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 150,
+            child: CustomPaint(
+              painter: DrawingCustomArc(),
             ),
           ),
         ],
@@ -183,5 +191,33 @@ class DrawobjectandText extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
+  }
+}
+
+class DrawingCustomArc extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Size center = size / 2;
+    Paint paint = Paint()
+      ..color = Colors.indigo
+      ..strokeWidth = 20.0;
+    Rect rect = Rect.fromCenter(
+      center: Offset(center.width, center.height),
+      width: 80,
+      height: 80,
+    );
+
+    canvas.drawArc(
+      rect,
+      0.4,
+      2 * pi - 0.8,
+      true,
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }
