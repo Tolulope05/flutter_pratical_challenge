@@ -6,6 +6,7 @@ class BasicPaint extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title: const Text("Basic Paint"),
       ),
@@ -23,6 +24,12 @@ class BasicPaint extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: CustomPaint(
               painter: DrawRectangle(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: CustomPaint(
+              painter: DrawCustomPath(),
             ),
           )
         ],
@@ -64,6 +71,27 @@ class DrawRectangle extends CustomPainter {
 
     Rect rect = Rect.fromCenter(center: center, width: 100, height: 100);
     canvas.drawRect(rect, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class DrawCustomPath extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Path pathone = Path()
+      ..moveTo(0, 0)
+      // ..lineTo(100, 100)
+      ..lineTo(0, 100)
+      ..lineTo(0, 0);
+    Paint paint = Paint()
+      ..color = Colors.greenAccent
+      ..strokeWidth = 20;
+
+    canvas.drawPath(pathone, paint);
   }
 
   @override
