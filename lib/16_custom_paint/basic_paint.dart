@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 
 class BasicPaint extends StatelessWidget {
@@ -39,7 +41,14 @@ class BasicPaint extends StatelessWidget {
             child: CustomPaint(
               painter: DrawCircle(),
             ),
-          )
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            child: CustomPaint(
+              painter: DrawobjectandText(),
+            ),
+          ),
         ],
       ),
     );
@@ -120,6 +129,47 @@ class DrawCircle extends CustomPainter {
       15,
       paint,
     );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class DrawobjectandText extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.lightBlue
+      ..strokeWidth = size.height;
+    var center = size / 2;
+    var style = const TextStyle(
+      color: Colors.black,
+      fontSize: 24,
+    );
+
+    final ui.ParagraphBuilder paragraphBuilder = ui.ParagraphBuilder(
+      ui.ParagraphStyle(
+        fontSize: style.fontSize,
+        fontFamily: style.fontFamily,
+        fontStyle: style.fontStyle,
+        fontWeight: style.fontWeight,
+        textAlign: TextAlign.start,
+      ),
+    )
+      ..pushStyle(style.getTextStyle())
+      ..addText(
+        'Demo Text',
+      );
+    final ui.Paragraph paragraph = paragraphBuilder.build()
+      ..layout(ui.ParagraphConstraints(width: size.width));
+    canvas.drawLine(
+      Offset(0, size.height),
+      Offset(size.width, size.height),
+      paint,
+    ); // for painting the bg
+    canvas.drawParagraph(paragraph, Offset(0, center.height));
   }
 
   @override
