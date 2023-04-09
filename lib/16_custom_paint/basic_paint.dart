@@ -11,8 +11,6 @@ class BasicPaint extends StatelessWidget {
         title: const Text("Basic Paint"),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.all(20),
@@ -109,11 +107,12 @@ class DrawCustomPath extends CustomPainter {
 class DrawCircle extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    Size center = size / 2;
-    Paint paint = Paint()..color = Colors.purple.shade400;
+    // Size center = size / 2;
+    Size center = const Size(100, 100);
+    Paint paint = Paint()..strokeWidth = 20.0;
     canvas.drawCircle(
       Offset(center.width, center.height),
-      20,
+      15,
       paint,
     );
   }
