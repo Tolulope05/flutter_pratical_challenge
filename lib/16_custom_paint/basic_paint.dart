@@ -44,7 +44,7 @@ class BasicPaint extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 50,
+            height: 100,
             child: CustomPaint(
               painter: DrawobjectandText(),
             ),
@@ -140,11 +140,15 @@ class DrawCircle extends CustomPainter {
 class DrawobjectandText extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    Path pathone = Path()
-      ..moveTo(0, 0)
-      ..lineTo(0, 100)
-      ..lineTo(100, 100)
-      ..lineTo(0, 0);
+    Path path = Path();
+    path.moveTo(0, size.height * 0.84);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.77,
+        size.width * 0.52, size.height * 0.84);
+    path.quadraticBezierTo(
+        size.width * 0.74, size.height * 0.92, size.width, size.height * 0.84);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close(); // wave path
     Paint paint = Paint()
       ..color = Colors.lightBlue
       ..strokeWidth = size.height;
@@ -170,7 +174,7 @@ class DrawobjectandText extends CustomPainter {
     final ui.Paragraph paragraph = paragraphBuilder.build()
       ..layout(ui.ParagraphConstraints(width: size.width));
     canvas.drawPath(
-      pathone,
+      path,
       paint,
     ); // for painting the bg
     canvas.drawParagraph(paragraph, Offset(0, center.height));
