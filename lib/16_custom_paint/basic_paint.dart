@@ -31,6 +31,12 @@ class BasicPaint extends StatelessWidget {
             child: CustomPaint(
               painter: DrawCustomPath(),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: CustomPaint(
+              painter: DrawCircle(),
+            ),
           )
         ],
       ),
@@ -84,14 +90,32 @@ class DrawCustomPath extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Path pathone = Path()
       ..moveTo(0, 0)
-      ..lineTo(100, 100)
       ..lineTo(0, 100)
+      ..lineTo(100, 100)
       ..lineTo(0, 0);
     Paint paint = Paint()
       ..color = Colors.greenAccent
       ..strokeWidth = 20;
 
     canvas.drawPath(pathone, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class DrawCircle extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Size center = size / 2;
+    Paint paint = Paint()..color = Colors.purple.shade400;
+    canvas.drawCircle(
+      Offset(center.width, center.height),
+      20,
+      paint,
+    );
   }
 
   @override
