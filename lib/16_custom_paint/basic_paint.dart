@@ -140,6 +140,11 @@ class DrawCircle extends CustomPainter {
 class DrawobjectandText extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
+    Path pathone = Path()
+      ..moveTo(0, 0)
+      ..lineTo(0, 100)
+      ..lineTo(100, 100)
+      ..lineTo(0, 0);
     Paint paint = Paint()
       ..color = Colors.lightBlue
       ..strokeWidth = size.height;
@@ -164,9 +169,8 @@ class DrawobjectandText extends CustomPainter {
       );
     final ui.Paragraph paragraph = paragraphBuilder.build()
       ..layout(ui.ParagraphConstraints(width: size.width));
-    canvas.drawLine(
-      Offset(0, size.height),
-      Offset(size.width, size.height),
+    canvas.drawPath(
+      pathone,
       paint,
     ); // for painting the bg
     canvas.drawParagraph(paragraph, Offset(0, center.height));
