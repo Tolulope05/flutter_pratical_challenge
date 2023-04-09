@@ -62,6 +62,7 @@ class DrawLine extends CustomPainter {
       finalLine,
       paint,
     );
+    canvas.drawColor(Colors.green, BlendMode.color);
   }
 
   @override
