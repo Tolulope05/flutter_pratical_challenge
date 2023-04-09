@@ -109,7 +109,7 @@ class DrawCircle extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // Size center = size / 2;
     Size center = const Size(100, 100);
-    Paint paint = Paint()..strokeWidth = 20.0;
+    Paint paint = Paint()..color = Colors.lime;
     canvas.drawCircle(
       Offset(center.width, center.height),
       15,
