@@ -29,7 +29,7 @@ class BasicPaint extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width / 2,
             height: 100,
             child: CustomPaint(
               painter: DrawCustomPath(),
@@ -44,7 +44,7 @@ class BasicPaint extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 100,
+            height: 150,
             child: CustomPaint(
               painter: DrawobjectandText(),
             ),
@@ -182,6 +182,6 @@ class DrawobjectandText extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
+    return true;
   }
 }
