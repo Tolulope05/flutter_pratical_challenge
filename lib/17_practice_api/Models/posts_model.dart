@@ -16,12 +16,6 @@ class PostsModels {
     _body = body;
   }
 
-  PostsModels.fromJson(dynamic json) {
-    _userId = json['userId'];
-    _id = json['id'];
-    _title = json['title'];
-    _body = json['body'];
-  }
   int? _userId;
   int? _id;
   String? _title;
@@ -31,6 +25,13 @@ class PostsModels {
   int? get id => _id;
   String? get title => _title;
   String? get body => _body;
+
+  PostsModels.fromJson(dynamic json) {
+    _userId = json['userId'];
+    _id = json['id'];
+    _title = json['title'];
+    _body = json['body'];
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
