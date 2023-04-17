@@ -25,7 +25,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  fluttertoast: ^8.2.1
   highlight_text: ^1.6.0
+  http: ^0.13.5
+  image_picker: ^0.8.7+3
+  modal_progress_hud_nsn: 
   pdf: null
   permission_handler: ^10.2.0
   printing: null

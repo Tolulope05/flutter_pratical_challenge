@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  modal_progress_hud_nsn
   permission_handler_windows
   printing
 )
