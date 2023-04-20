@@ -95,18 +95,44 @@ class StatusSaver extends StatelessWidget {
   Widget build(BuildContext context) {
     StatusSaverNotifier controller = Provider.of<StatusSaverNotifier>(context);
     return Scaffold(
-        backgroundColor: Colors.grey.shade200,
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Whatsapp Status Saver"),
-        ),
-        body: SingleChildScrollView(
-          child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: ((context, index) {
-              return Container();
-            }),
+      backgroundColor: Colors.grey.shade200,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Whatsapp Status Saver"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.getStatus(".mp4");
+            },
+            icon: const Icon(Icons.video_collection),
           ),
-        ));
+          IconButton(
+            onPressed: () {
+              controller.getStatus(".jpg");
+            },
+            icon: const Icon(Icons.image),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: controller.getImages.length,
+          itemBuilder: ((context, index) {
+            if (controller.getImages[index].path.endsWith(".jpg")) {
+              return Container(
+                margin: const EdgeInsets.all(10),
+                child: Image.file(
+                  File(controller.getImages[index].path),
+                  fit: BoxFit.cover,
+                ),
+              );
+            }
+
+            return Container();
+          }),
+        ),
+      ),
+    );
   }
 }
