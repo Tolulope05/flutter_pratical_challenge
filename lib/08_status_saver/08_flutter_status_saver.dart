@@ -115,6 +115,7 @@ class StatusSaver extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: controller.getImages.length,
           itemBuilder: ((context, index) {
@@ -126,9 +127,17 @@ class StatusSaver extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               );
+            } else if (controller.getImages[index].path.endsWith(".mp4")) {
+              return Container(
+                margin: const EdgeInsets.all(10),
+                child: Image.file(
+                  File(controller.getImages[index].path),
+                  fit: BoxFit.cover,
+                ),
+              );
+            } else {
+              return Container();
             }
-
-            return Container();
           }),
         ),
       ),
