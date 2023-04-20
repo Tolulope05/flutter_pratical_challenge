@@ -97,7 +97,6 @@ class StatusSaver extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        centerTitle: true,
         title: const Text("Whatsapp Status Saver"),
         actions: [
           IconButton(
