@@ -1,0 +1,15 @@
+A user opens the application and has to grant the app access to storage of the device after which app is triggered.
+-Dashboard
+  -Photo Status
+    - List of WhatsApp Photo Status from user device.
+      - View Specific photo (on click)
+        - Download Photo. 
+  -Video Status
+    - List of WhatsApp Video Status from user device.
+      - View Specific Video (on click)
+        - Download Video.
+        - Play Video.
+-Navigation Drawer
+  -About us 
+  -Share with Friends
+  -Rate and Review
