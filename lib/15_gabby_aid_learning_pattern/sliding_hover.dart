@@ -79,7 +79,7 @@ class _SlidingHoverState extends State<SlidingHover> {
             ),
             ElevatedButton(
               onPressed: () => setState(() {}),
-              child: const Text('presss'),
+              child: const Text('press'),
             ),
           ],
         ),
@@ -143,7 +143,7 @@ class MyWidget extends StatelessWidget {
             const Align(
               alignment: Alignment(0, -0.2),
               child: Text(
-                'frref',
+                'Some Text',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
