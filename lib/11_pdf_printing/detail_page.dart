@@ -18,7 +18,7 @@ class DetailPage extends StatelessWidget {
           );
           // rootBundle.
         },
-        child: Icon(Icons.picture_as_pdf),
+        child: const Icon(Icons.picture_as_pdf),
       ),
       appBar: AppBar(
         title: Text(invoice.name),
@@ -34,13 +34,13 @@ class DetailPage extends StatelessWidget {
                   Expanded(
                     child: Text(
                       'Customer',
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
                   Expanded(
                     child: Text(
                       invoice.customer,
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headlineMedium,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -55,7 +55,7 @@ class DetailPage extends StatelessWidget {
                 children: [
                   Text(
                     'Invoice Items',
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   ...invoice.items.map(
                     (e) => ListTile(
@@ -66,11 +66,11 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   DefaultTextStyle.merge(
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text("Total"),
+                        const Text("Total"),
                         Text(
                           invoice.totalCost().toStringAsFixed(2),
                         ),

@@ -15,7 +15,7 @@ class BasicPaint extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 30,
             child: CustomPaint(

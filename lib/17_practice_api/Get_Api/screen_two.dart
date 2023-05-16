@@ -49,7 +49,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
                                 snapshot.data![index].url.toString()),
                           ),
                           title: Text(
-                              'id : ' + snapshot.data![index].id.toString()),
+                              'id : ${snapshot.data![index].id}'),
                           subtitle:
                               Text(snapshot.data![index].title.toString()),
                         );

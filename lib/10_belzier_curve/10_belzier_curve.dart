@@ -29,7 +29,7 @@ class _BelzierCurveState extends State<BelzierCurve>
   void initState() {
     super.initState();
     controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 300), value: 0);
+        vsync: this, duration: const Duration(milliseconds: 300), value: 0);
   }
 
   @override

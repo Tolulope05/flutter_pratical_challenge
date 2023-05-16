@@ -22,15 +22,15 @@ class VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!Directory('${_videoDir.path}').existsSync()) {
+    if (!Directory(_videoDir.path).existsSync()) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
+        children: const [
+          Text(
             'Install WhatsApp\n',
             style: TextStyle(fontSize: 18.0),
           ),
-          const Text(
+          Text(
             "Your Friend's Status Will Be Available Here",
             style: TextStyle(fontSize: 18.0),
           ),
@@ -67,7 +67,7 @@ class _VideoGridState extends State<VideoGrid> {
         .toList(growable: false);
 
     if (videoList.isNotEmpty) {
-      if (videoList.length > 0) {
+      if (videoList.isNotEmpty) {
         return Container(
           margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
           child: GridView.builder(

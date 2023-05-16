@@ -15,7 +15,7 @@ class CustomBGGabby extends StatelessWidget {
       ),
       backgroundColor: Colors.teal,
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: height,
           width: width,
           // color: Colors.red,

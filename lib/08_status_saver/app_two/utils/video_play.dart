@@ -79,10 +79,10 @@ class _PlayStatusState extends State<PlayStatus> {
                             padding: EdgeInsets.all(10.0),
                           ),
                           MaterialButton(
-                            child: const Text('Close'),
                             color: Colors.teal,
                             textColor: Colors.white,
                             onPressed: () => Navigator.pop(context),
+                            child: const Text('Close'),
                           )
                         ],
                       ),

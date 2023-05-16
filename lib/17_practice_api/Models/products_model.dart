@@ -11,15 +11,15 @@ class ProductsModel {
     if (json['data'] != null) {
       data = <Data>[];
       json['data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
+        data!.add(Data.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['success'] = this.success;
-    data['message'] = this.message;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['success'] = success;
+    data['message'] = message;
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -70,26 +70,26 @@ class Data {
     if (json['products'] != null) {
       products = <Products>[];
       json['products'].forEach((v) {
-        products!.add(new Products.fromJson(v));
+        products!.add(Products.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['is_active'] = this.isActive;
-    data['created_at'] = this.createdAt;
-    data['name'] = this.name;
-    data['description'] = this.description;
-    data['shopemail'] = this.shopemail;
-    data['shopaddress'] = this.shopaddress;
-    data['shopcity'] = this.shopcity;
-    data['userid'] = this.userid;
-    data['image'] = this.image;
-    data['__v'] = this.iV;
-    if (this.products != null) {
-      data['products'] = this.products!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['is_active'] = isActive;
+    data['created_at'] = createdAt;
+    data['name'] = name;
+    data['description'] = description;
+    data['shopemail'] = shopemail;
+    data['shopaddress'] = shopaddress;
+    data['shopcity'] = shopcity;
+    data['userid'] = userid;
+    data['image'] = image;
+    data['__v'] = iV;
+    if (products != null) {
+      data['products'] = products!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -163,7 +163,7 @@ class Products {
     if (json['images'] != null) {
       images = <Images>[];
       json['images'].forEach((v) {
-        images!.add(new Images.fromJson(v));
+        images!.add(Images.fromJson(v));
       });
     }
     iV = json['__v'];
@@ -171,30 +171,30 @@ class Products {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['on_sale'] = this.onSale;
-    data['sale_percent'] = this.salePercent;
-    data['sold'] = this.sold;
-    data['slider_new'] = this.sliderNew;
-    data['slider_recent'] = this.sliderRecent;
-    data['slider_sold'] = this.sliderSold;
-    data['date'] = this.date;
-    data['title'] = this.title;
-    data['categories'] = this.categories;
-    data['subcate'] = this.subcate;
-    data['shop'] = this.shop;
-    data['price'] = this.price;
-    data['sale_title'] = this.saleTitle;
-    data['sale_price'] = this.salePrice;
-    data['description'] = this.description;
-    data['colors'] = this.colors;
-    data['size'] = this.size;
-    if (this.images != null) {
-      data['images'] = this.images!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['on_sale'] = onSale;
+    data['sale_percent'] = salePercent;
+    data['sold'] = sold;
+    data['slider_new'] = sliderNew;
+    data['slider_recent'] = sliderRecent;
+    data['slider_sold'] = sliderSold;
+    data['date'] = date;
+    data['title'] = title;
+    data['categories'] = categories;
+    data['subcate'] = subcate;
+    data['shop'] = shop;
+    data['price'] = price;
+    data['sale_title'] = saleTitle;
+    data['sale_price'] = salePrice;
+    data['description'] = description;
+    data['colors'] = colors;
+    data['size'] = size;
+    if (images != null) {
+      data['images'] = images!.map((v) => v.toJson()).toList();
     }
-    data['__v'] = this.iV;
-    data['in_wishlist'] = this.inWishlist;
+    data['__v'] = iV;
+    data['in_wishlist'] = inWishlist;
     return data;
   }
 }
@@ -213,10 +213,10 @@ class Images {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['filename'] = this.filename;
-    data['url'] = this.url;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['filename'] = filename;
+    data['url'] = url;
     return data;
   }
 }

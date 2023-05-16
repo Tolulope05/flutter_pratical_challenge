@@ -21,15 +21,15 @@ class ImageScreenState extends State<ImageScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!Directory('${_newPhotoDir.path}').existsSync()) {
+    if (!Directory(_newPhotoDir.path).existsSync()) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
+        children: const [
+          Text(
             'Install WhatsApp\n',
             style: TextStyle(fontSize: 18.0),
           ),
-          const Text(
+          Text(
             "Your Friend's Status Will Be Available Here",
             style: TextStyle(fontSize: 18.0),
           ),
@@ -41,12 +41,12 @@ class ImageScreenState extends State<ImageScreen> {
           .map((item) => item.path)
           .where((item) => item.endsWith('.jpg'))
           .toList(growable: false);
-      if (imageList.length > 0) {
+      if (imageList.isNotEmpty) {
         return Container(
             margin: const EdgeInsets.all(8.0),
             child: GridView.builder(
               key: PageStorageKey(widget.key),
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 150),
               itemCount: imageList.length,
               itemBuilder: (BuildContext context, int index) {

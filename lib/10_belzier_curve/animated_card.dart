@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
-final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: const Scaffold(
         body: Center(
           child: CardWidget(),
         ),
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
 }
 
 class CardWidget extends StatefulWidget {
+  const CardWidget({super.key});
+
   @override
   createState() => _CardWidgetState();
 }
@@ -43,7 +47,7 @@ class _CardWidgetState extends State<CardWidget>
 
     // Initialize the animation controller
     controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 300), value: 0);
+        vsync: this, duration: const Duration(milliseconds: 300), value: 0);
   }
 
   @override
@@ -67,7 +71,7 @@ class _CardWidgetState extends State<CardWidget>
                 alignment: Alignment.center,
                 child: Container(
                   height: MediaQuery.of(context).size.height - 130,
-                  margin: EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20),
                   alignment: Alignment.center,
                   child: showFront ? cardFront : cardBack,
                 ),
@@ -75,7 +79,7 @@ class _CardWidgetState extends State<CardWidget>
             },
           ),
           TextButton(
-            child: Text("flip me"),
+            child: const Text("flip me"),
             onPressed: () async {
               // Flip the image
               await controller.forward();

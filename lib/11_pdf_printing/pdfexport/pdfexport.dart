@@ -2,8 +2,6 @@ import 'dart:typed_data';
 
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
-import 'dart:io';
-import 'package:flutter/services.dart' show rootBundle;
 
 import '../pdf_printing.dart';
 
@@ -48,7 +46,7 @@ Future<Uint8List> makePdf(Invoice invoice) async {
                         style: Theme.of(context).header4,
                         textAlign: TextAlign.center,
                       ),
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                     ),
                   ],
                 ),
@@ -87,7 +85,7 @@ Future<Uint8List> makePdf(Invoice invoice) async {
                 "THANK YOU FOR YOUR CUSTOM!",
                 style: Theme.of(context).header2,
               ),
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
             ),
             Text(
                 "Please forward the below slip to your accounts payable department."),
@@ -129,7 +127,7 @@ Future<Uint8List> makePdf(Invoice invoice) async {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               child: Text(
                 'Please ensure all cheques are payable to the ADAM FAMILY TRUST.',
                 style: Theme.of(context).header3.copyWith(
@@ -151,7 +149,7 @@ Widget PaddedText(
   final TextAlign align = TextAlign.left,
 }) =>
     Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Text(
         text,
         textAlign: align,

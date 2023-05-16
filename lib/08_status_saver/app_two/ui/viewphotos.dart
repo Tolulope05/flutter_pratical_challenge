@@ -90,10 +90,10 @@ class _ViewPhotosState extends State<ViewPhotos> {
                             padding: EdgeInsets.all(10.0),
                           ),
                           MaterialButton(
-                            child: const Text('Close'),
                             color: Colors.teal,
                             textColor: Colors.white,
                             onPressed: () => Navigator.pop(context),
+                            child: const Text('Close'),
                           )
                         ],
                       ),
@@ -132,7 +132,7 @@ class _ViewPhotosState extends State<ViewPhotos> {
       ),
       floatingActionButton: SpeedDialFabWidget(
         secondaryIconsList: _fabMiniMenuItemList,
-        secondaryIconsText: [
+        secondaryIconsText: const [
           "Save",
           "Share",
           "Repost",

@@ -37,9 +37,9 @@ class MyAppState extends State<MyApp> {
     //
     if (androidSDK! >= 30) {
       //Check first if we already have the permissions
-      final _currentStatusManaged =
+      final currentStatusManaged =
           await Permission.manageExternalStorage.status;
-      if (_currentStatusManaged.isGranted) {
+      if (currentStatusManaged.isGranted) {
         //Update
         return 1;
       } else {
@@ -48,8 +48,8 @@ class MyAppState extends State<MyApp> {
     } else {
       //For older phones simply request the typical storage permissions
       //Check first if we already have the permissions
-      final _currentStatusStorage = await Permission.storage.status;
-      if (_currentStatusStorage.isGranted) {
+      final currentStatusStorage = await Permission.storage.status;
+      if (currentStatusStorage.isGranted) {
         //Update provider
         return 1;
       } else {
@@ -61,18 +61,18 @@ class MyAppState extends State<MyApp> {
   Future<int> requestPermission() async {
     if (androidSDK! >= 30) {
       //request management permissions for android 11 and higher devices
-      final _requestStatusManaged =
+      final requestStatusManaged =
           await Permission.manageExternalStorage.request();
       //Update Provider model
-      if (_requestStatusManaged.isGranted) {
+      if (requestStatusManaged.isGranted) {
         return 1;
       } else {
         return 0;
       }
     } else {
-      final _requestStatusStorage = await Permission.storage.request();
+      final requestStatusStorage = await Permission.storage.request();
       //Update provider model
-      if (_requestStatusStorage.isGranted) {
+      if (requestStatusStorage.isGranted) {
         return 1;
       } else {
         return 0;

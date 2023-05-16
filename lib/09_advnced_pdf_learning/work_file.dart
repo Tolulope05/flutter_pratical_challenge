@@ -16,8 +16,8 @@ class TesTFile extends StatelessWidget {
     familyMembers.map((member) {
       return (member.toUpperCase());
     }).forEach((member) {
-      print("${member}: ${member.length}");
+      print("$member: ${member.length}");
     });
-    return Scaffold();
+    return const Scaffold();
   }
 }

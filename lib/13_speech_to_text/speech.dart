@@ -4,6 +4,8 @@ import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class SpeechScreen extends StatefulWidget {
+  const SpeechScreen({super.key});
+
   @override
   _SpeechScreenState createState() => _SpeechScreenState();
 }
