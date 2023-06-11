@@ -19,14 +19,6 @@ class CurvedBottomNavBarContainerScreen extends StatelessWidget {
   }
 }
 
-// Note: You can put this container in a Stack, put the row of icons and
-// the FloatingActionButton in Positioned Widgets.
-
-/// Paints a curved bottom navigation bar
-/// Note: If the screen width is large (if a phone is in Landscape mode),
-/// part of the curve becomes less smooth.
-/// To resolve this, we can limit the width based on screenWidth.
-/// We can also increase the height of the bar (on big screens)
 class CurvedBottomNavBarContainer extends StatelessWidget {
   const CurvedBottomNavBarContainer({Key? key}) : super(key: key);
 
