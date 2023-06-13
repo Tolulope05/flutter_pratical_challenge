@@ -3,6 +3,7 @@ import 'package:flutter_pratical_challenge/08_status_saver/app_one/08_flutter_st
 import 'package:provider/provider.dart';
 
 import '15_gabby_aid_learning_pattern/curvd_bottom_navbar.dart';
+import '19_encrypt_decrypt/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             // home: const SpiralImage(
             //   title: "Spiral Image",
             // ),
-            home: const CurvedBottomNavBarContainerScreen(),
+            home: const EncryptionHome(),
           );
         });
   }
