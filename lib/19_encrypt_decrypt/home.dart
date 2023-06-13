@@ -31,7 +31,7 @@ class _EncryptionHomeState extends State<EncryptionHome> {
 
   Widget _buildBody() {
     return Container(
-      height: 280,
+      height: 320,
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.only(left: 10, right: 10),
       child: Card(
@@ -63,7 +63,7 @@ class _EncryptionHomeState extends State<EncryptionHome> {
               ),
               Expanded(
                 child: Text("DecryptText : ${EncryptData.decrypted ?? ''}",
-                    maxLines: 2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(color: Colors.black, fontSize: 16)),
               ),
@@ -83,7 +83,7 @@ class _EncryptionHomeState extends State<EncryptionHome> {
                         EncryptData.encryptAES(_controller.text);
                       });
                     },
-                    child: const Text('Encryption'),
+                    child: const Text('Encrypt Text'),
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -95,7 +95,7 @@ class _EncryptionHomeState extends State<EncryptionHome> {
                         EncryptData.decryptAES(_controller.text);
                       });
                     },
-                    child: const Text('Decryption'),
+                    child: const Text('Decrypt Texts'),
                   )
                 ],
               )
