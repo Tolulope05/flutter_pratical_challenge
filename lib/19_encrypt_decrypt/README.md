@@ -94,6 +94,12 @@ class EncryptDecryptData {
 }
 ```
 
+##### 1.1.6. Image gif from media
+
+![Preview](/display/encrypt.gif)
+
+
+
 
 
 
