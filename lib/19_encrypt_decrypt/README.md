@@ -103,5 +103,5 @@ class EncryptDecryptData {
 
 
 
-## Author - Tolulope Fakunle (Flutter Develoer)
+## Author - Tolulope Fakunle (Flutter Developer)
 
