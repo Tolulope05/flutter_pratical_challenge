@@ -16,6 +16,7 @@ dependencies:
   chewie: ^1.4.0
   cupertino_icons: ^1.0.2
   device_info_plus: ^8.2.0
+  encrypt: ^5.0.1
   flutter:
     sdk: flutter
   fluttertoast: ^8.2.1
