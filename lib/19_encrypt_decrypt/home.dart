@@ -17,7 +17,8 @@ class _EncryptionHomeState extends State<EncryptionHome> {
       backgroundColor: Colors.green.shade100,
       appBar: AppBar(
         backgroundColor: Colors.green.shade600,
-        title: const Text("Encrypt and Decrypt Data"),
+        title: const Text("Encrypt and Decrypt Data",
+            style: TextStyle(color: Colors.white)),
       ),
       body: SingleChildScrollView(
         child: Container(
