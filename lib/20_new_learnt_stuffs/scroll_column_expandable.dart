@@ -56,3 +56,7 @@ class ScrollColumnExpandable extends StatelessWidget {
     );
   }
 }
+
+/**
+ * OTHER ALTERNATIVE IS CUSSTOM SCROLL VIEW BUT CustomScrollView doesn't respect keyboard overflow
+ */
