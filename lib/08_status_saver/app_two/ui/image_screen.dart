@@ -22,9 +22,9 @@ class ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(BuildContext context) {
     if (!Directory(_newPhotoDir.path).existsSync()) {
-      return Column(
+      return const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Text(
             'Install WhatsApp\n',
             style: TextStyle(fontSize: 18.0),

@@ -17,12 +17,12 @@ class OnBoardThree extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                   top: 35.0, right: 35.0, left: 35.0, bottom: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     "Acepta nuestras politicas  para recibir una experiencia personalizada 😊",
                     textAlign: TextAlign.start,

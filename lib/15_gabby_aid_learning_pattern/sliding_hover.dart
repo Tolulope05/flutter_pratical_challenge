@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class SlidingHover extends StatefulWidget {
@@ -26,7 +28,7 @@ class _SlidingHoverState extends State<SlidingHover> {
   }
 
   Align test() {
-    print('funcrtion');
+    log('funcrtion');
     return Align(
       alignment: Alignment(getLeftAlignment(), 0),
       child: SizedBox(
@@ -127,7 +129,7 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('CLASS');
+    log('CLASS');
     return Align(
       alignment: const Alignment(0, 0),
       child: SizedBox(

@@ -7,12 +7,12 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             // CustomTabView(
             //   changeTab: (int int) => model.chnagetabview(int),
             //   index: model.tabView,

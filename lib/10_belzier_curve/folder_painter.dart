@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class CustomFolder extends StatelessWidget {
@@ -55,7 +57,7 @@ class CustomFolder extends StatelessWidget {
 class FolderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    print(size.height);
+    log(size.height.toString());
     Paint paint = Paint();
     Path path = Path();
     double top = 20.0;

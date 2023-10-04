@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
@@ -67,7 +67,7 @@ class _CardWidgetState extends State<CardWidget>
             animation: controller,
             builder: (context, child) {
               return Transform(
-                transform: Matrix4.rotationX((controller.value) * Math.pi / 2),
+                transform: Matrix4.rotationX((controller.value) * math.pi / 2),
                 alignment: Alignment.center,
                 child: Container(
                   height: MediaQuery.of(context).size.height - 130,

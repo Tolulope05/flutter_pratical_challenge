@@ -18,11 +18,11 @@ class OnBoardTwo extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
+              const Padding(
+                padding: EdgeInsets.only(
                     top: 35.0, right: 35.0, left: 35.0, bottom: 15),
                 child: Column(
-                  children: const [
+                  children: [
                     Text(
                       "¿Dónde empieza tu aventura?",
                       textAlign: TextAlign.center,

@@ -62,7 +62,7 @@ Widget optionStack() {
             child: Container(
               color: Colors.grey.withOpacity(0.1),
               alignment: Alignment.center,
-              child: Text('CHOCOLATE'),
+              child: const Text('CHOCOLATE'),
             ),
           ),
         ),

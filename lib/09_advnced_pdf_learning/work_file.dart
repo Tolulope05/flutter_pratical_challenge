@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class TesTFile extends StatelessWidget {
@@ -16,7 +18,7 @@ class TesTFile extends StatelessWidget {
     familyMembers.map((member) {
       return (member.toUpperCase());
     }).forEach((member) {
-      print("$member: ${member.length}");
+      log("$member: ${member.length}");
     });
     return const Scaffold();
   }

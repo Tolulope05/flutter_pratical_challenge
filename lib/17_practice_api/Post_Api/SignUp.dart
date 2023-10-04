@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -18,15 +19,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
   // Only get SignUp by this email:-eve.holt@reqres.in
   // and password:-pistol
 
-  void SignUp(String email, password) async {
+  void signUp(String email, password) async {
     try {
       Response response = await post(
           Uri.parse('https://reqres.in/api/register'),
           body: {'email': email, 'password': password});
 
       if (response.statusCode == 200) {
-        var data = jsonDecode(response.body.toString());
-        print(data);
+        var data = jsonDecode(response.body);
+        log(data);
         toastMessage('Account Created Successfully');
       } else {
         toastMessage('FAILED');
@@ -65,7 +66,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             GestureDetector(
               onTap: () {
-                SignUp(emailController.text.toString(),
+                signUp(emailController.text.toString(),
                     passwordController.text.toString());
               },
               child: Container(

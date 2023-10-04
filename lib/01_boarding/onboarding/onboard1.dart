@@ -18,10 +18,10 @@ class OnBoardOne extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(35.0),
+              const Padding(
+                padding: EdgeInsets.all(35.0),
                 child: Column(
-                  children: const [
+                  children: [
                     Text(
                       "Bienvenido a Viajes Ya",
                       textAlign: TextAlign.center,

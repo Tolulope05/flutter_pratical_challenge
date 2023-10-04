@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
@@ -13,35 +15,35 @@ class SpeechScreen extends StatefulWidget {
 class _SpeechScreenState extends State<SpeechScreen> {
   final Map<String, HighlightedWord> _highlights = {
     'flutter': HighlightedWord(
-      onTap: () => print('flutter'),
+      onTap: () => log('flutter'),
       textStyle: const TextStyle(
         color: Colors.blue,
         fontWeight: FontWeight.bold,
       ),
     ),
     'voice': HighlightedWord(
-      onTap: () => print('voice'),
+      onTap: () => log('voice'),
       textStyle: const TextStyle(
         color: Colors.green,
         fontWeight: FontWeight.bold,
       ),
     ),
     'subscribe': HighlightedWord(
-      onTap: () => print('subscribe'),
+      onTap: () => log('subscribe'),
       textStyle: const TextStyle(
         color: Colors.red,
         fontWeight: FontWeight.bold,
       ),
     ),
     'like': HighlightedWord(
-      onTap: () => print('like'),
+      onTap: () => log('like'),
       textStyle: const TextStyle(
         color: Colors.blueAccent,
         fontWeight: FontWeight.bold,
       ),
     ),
     'comment': HighlightedWord(
-      onTap: () => print('comment'),
+      onTap: () => log('comment'),
       textStyle: const TextStyle(
         color: Colors.green,
         fontWeight: FontWeight.bold,
@@ -100,8 +102,8 @@ class _SpeechScreenState extends State<SpeechScreen> {
   void _listen() async {
     if (!_isListening) {
       bool available = await _speech.initialize(
-        onStatus: (val) => print('onStatus: $val'),
-        onError: (val) => print('onError: $val'),
+        onStatus: (val) => log('onStatus: $val'),
+        onError: (val) => log('onError: $val'),
       );
       if (available) {
         setState(() => _isListening = true);
@@ -113,12 +115,12 @@ class _SpeechScreenState extends State<SpeechScreen> {
             }
           }),
         );
-        print("Hello");
+        log("Hello");
       }
     } else {
       setState(() => _isListening = false);
       _speech.stop();
-      print("Stop");
+      log("Stop");
     }
   }
 }

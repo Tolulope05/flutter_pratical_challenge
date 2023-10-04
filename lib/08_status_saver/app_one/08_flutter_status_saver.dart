@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:developer';
 import 'dart:io';
 
@@ -51,7 +53,7 @@ class StatusSaverNotifier extends ChangeNotifier {
               items.where((element) => element.path.endsWith(".jpg")).toList();
           notifyListeners();
         } else {
-          print("These files werent captured: $items");
+          log("These files werent captured: $items");
         }
         _isWhatsAappAvailable = true;
         notifyListeners();
@@ -74,7 +76,7 @@ class StatusSaverNotifier extends ChangeNotifier {
               items.where((element) => element.path.endsWith(".jpg")).toList();
           notifyListeners();
         } else {
-          print("These files werent captured: $items");
+          log("These files werent captured: $items");
         }
         _isWhatsAappBusinessAvailable = true;
         notifyListeners();

@@ -1,3 +1,7 @@
+// ignore_for_file: constant_identifier_names
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 /// DIDNT QUITE FIGURE THIS OUT BACK THEN */
@@ -17,13 +21,13 @@ class Enumscreen extends StatelessWidget {
           PopupMenuButton(itemBuilder: (context) {
             List enums = Number.values;
 
-            print(enums);
+            log(enums.toString());
             return List.generate(
               enums.length,
               (index) => PopupMenuItem(
                 value: NumberSelect().selectnumber(enums[index]),
                 onTap: () {
-                  print("${enums[index]} selected");
+                  log("${enums[index]} selected");
                 },
                 child: Text("${enums[index]}"),
               ),

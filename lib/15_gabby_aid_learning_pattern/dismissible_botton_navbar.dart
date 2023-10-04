@@ -72,9 +72,9 @@ class _DismissibleBotomNavState extends State<DismissibleBotomNav> {
       bottomNavigationBar: AnimatedContainer(
         duration: const Duration(seconds: 1),
         height: height,
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             Icon(
               Icons.home,
               size: 30,

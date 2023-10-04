@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:encrypt/encrypt.dart';
 
@@ -15,7 +16,7 @@ class EncryptData {
     final iv = IV.fromLength(16);
     final encrypter = Encrypter(AES(key));
     encrypted = encrypter.encrypt(plainText, iv: iv);
-    print(encrypted!.base64);
+    log(encrypted!.base64);
   }
 
   static decryptAES(plainText) {
@@ -25,13 +26,13 @@ class EncryptData {
     final iv = IV.fromLength(16);
     final encrypter = Encrypter(AES(key));
     decrypted = encrypter.decrypt(encrypted!, iv: iv);
-    print(decrypted);
+    log(decrypted);
   }
 
 //for Salsa Algorithms
 
   static Encrypted? encryptedSalsa;
-  static var decryptedSalsa;
+  static String? decryptedSalsa;
 
   static encryptSalsa(plainText) {
     final key = Key.fromUtf8(
@@ -40,7 +41,7 @@ class EncryptData {
     final iv = IV.fromLength(8);
     final encrypter = Encrypter(Salsa20(key));
     encryptedSalsa = encrypter.encrypt(plainText, iv: iv);
-    print(encryptedSalsa!.base64);
+    log(encryptedSalsa!.base64);
   }
 
   static decryptSalsa(plainText) {
@@ -50,13 +51,13 @@ class EncryptData {
     final iv = IV.fromLength(8);
     final encrypter = Encrypter(Salsa20(key));
     decryptedSalsa = encrypter.decrypt(encryptedSalsa!, iv: iv);
-    print(decryptedSalsa);
+    log(decryptedSalsa!);
   }
 
 //for Fernet Algorithms
 
   static Encrypted? encryptedFernet;
-  static var decryptedFernet;
+  static String? decryptedFernet;
 
   static encryptFernet(plainText) {
     final key = Key.fromUtf8(
@@ -67,8 +68,8 @@ class EncryptData {
     final fernet = Fernet(b64key);
     final encrypter = Encrypter(fernet);
     encryptedFernet = encrypter.encrypt(plainText, iv: iv);
-    print(encryptedFernet!.base64);
-    print(fernet.extractTimestamp(encryptedFernet!.bytes));
+    log(encryptedFernet!.base64);
+    log(fernet.extractTimestamp(encryptedFernet!.bytes).toString());
   }
 
   static decryptFernet(plainText) {
@@ -80,6 +81,6 @@ class EncryptData {
     final fernet = Fernet(b64key);
     final encrypter = Encrypter(fernet);
     decryptedFernet = encrypter.decrypt(encryptedFernet!, iv: iv);
-    print(decryptedFernet);
+    log(decryptedFernet!);
   }
 }

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class PaginationExample extends StatefulWidget {
+  const PaginationExample({super.key});
+
   @override
   _PaginationExampleState createState() => _PaginationExampleState();
 }

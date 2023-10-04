@@ -23,9 +23,9 @@ class VideoScreenState extends State<VideoScreen> {
   @override
   Widget build(BuildContext context) {
     if (!Directory(_videoDir.path).existsSync()) {
-      return Column(
+      return const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
           Text(
             'Install WhatsApp\n',
             style: TextStyle(fontSize: 18.0),

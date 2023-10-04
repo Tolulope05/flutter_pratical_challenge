@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -25,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
-        print(data);
+        log(data);
         toastMessage('Log in successfully');
       } else {
         toastMessage('Failed');

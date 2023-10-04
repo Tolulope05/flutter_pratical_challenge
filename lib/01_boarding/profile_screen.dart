@@ -39,12 +39,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     width: 90,
                   ),
                   const SizedBox(width: 14),
-                  Expanded(
+                  const Expanded(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           "Camilo Carrera",
                           style: TextStyle(

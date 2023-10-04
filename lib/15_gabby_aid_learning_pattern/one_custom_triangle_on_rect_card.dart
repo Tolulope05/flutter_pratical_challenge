@@ -190,7 +190,20 @@ class DemoPainter extends CustomPainter {
     Paint paint = Paint()
       ..color = Colors.orange
       ..strokeWidth = 20.0;
-  }
+
+    Path path = Path();
+
+    path.moveTo(0, size.height * 0.5);
+    path.quadraticBezierTo(
+        size.width * 0.25, size.height * 0.25, size.width * 0.5, 0);
+    path.quadraticBezierTo(
+        size.width * 0.75, size.height * 0.25, size.width, size.height * 0.5);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+
+    canvas.drawPath(path, paint);
+  } // checkkoutt the outcoe of this
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
