@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pratical_challenge/08_status_saver/app_one/08_flutter_status_saver.dart';
 import 'package:provider/provider.dart';
 
+import '16_custom_paint/water_ripple.dart';
 import '20_new_learnt_stuffs/list_test.dart';
 import '20_new_learnt_stuffs/pagination_flutter.dart';
 
@@ -37,8 +38,9 @@ class MyApp extends StatelessWidget {
             //   title: "Spiral Image",
             // ),
             // home: const EncryptionHome(),
-            home: PaginationExample(),
+            // home: PaginationExample(),
             // home: const ListTest(),
+            home: WaterRipple(),
           );
         });
   }
