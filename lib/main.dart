@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pratical_challenge/08_status_saver/app_one/08_flutter_status_saver.dart';
 import 'package:provider/provider.dart';
 
-import '15_gabby_aid_learning_pattern/curvd_bottom_navbar.dart';
-import '19_encrypt_decrypt/home.dart';
+import '20_new_learnt_stuffs/list_test.dart';
+import '20_new_learnt_stuffs/pagination_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,9 +24,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Flutter Demo',
             theme: ThemeData(
-              primarySwatch: Colors.green,
               visualDensity: VisualDensity.adaptivePlatformDensity,
-              useMaterial3: true,
+              // useMaterial3: true,
             ),
             // home: const DismissibleBotomNav(
             //   title: "Some text",
@@ -37,7 +36,9 @@ class MyApp extends StatelessWidget {
             // home: const SpiralImage(
             //   title: "Spiral Image",
             // ),
-            home: const EncryptionHome(),
+            // home: const EncryptionHome(),
+            // home: PaginationSample(),
+            home: const ListTest(),
           );
         });
   }
