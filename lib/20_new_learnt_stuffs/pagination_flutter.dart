@@ -79,8 +79,7 @@ class _PaginationExampleState extends State<PaginationExample> {
         onRefresh: _refreshItems,
         child: Column(
           children: [
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxHeight: 300),
+            Expanded(
               child: ListView.builder(
                 controller: _scrollController,
                 itemCount: _items.length + (_isLoading ? 1 : 0),
