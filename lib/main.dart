@@ -3,7 +3,8 @@ import 'package:flutter_pratical_challenge/08_status_saver/app_one/08_flutter_st
 import 'package:provider/provider.dart';
 
 import '16_custom_paint/water_ripple.dart';
-import '20_new_learnt_stuffs/list_test.dart';
+import '20_new_learnt_stuffs/list_test/crude_list_test.dart';
+import '20_new_learnt_stuffs/list_test/list_test.dart';
 import '20_new_learnt_stuffs/pagination_flutter.dart';
 
 void main() {
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
             // home: const EncryptionHome(),
             // home: PaginationExample(),
             // home: const ListTest(),
-            home: WaterRipple(),
+            // home: ListTest(),
+            home: AmazingListTest(),
           );
         });
   }
