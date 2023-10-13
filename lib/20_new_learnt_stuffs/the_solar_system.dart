@@ -1,14 +1,15 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class Space extends StatefulWidget {
-  const Space({Key? key}) : super(key: key);
+class SolarSystemSpace extends StatefulWidget {
+  const SolarSystemSpace({Key? key}) : super(key: key);
 
   @override
-  State<Space> createState() => _SpaceState();
+  State<SolarSystemSpace> createState() => _SolarSystemSpaceState();
 }
 
-class _SpaceState extends State<Space> with TickerProviderStateMixin {
+class _SolarSystemSpaceState extends State<SolarSystemSpace>
+    with TickerProviderStateMixin {
   late AnimationController _earthAnimCon;
   late AnimationController _moonAnimCon;
   late Animation<double> _earthAnim;
