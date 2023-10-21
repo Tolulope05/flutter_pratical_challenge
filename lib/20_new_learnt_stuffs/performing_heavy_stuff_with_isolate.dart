@@ -75,3 +75,5 @@ void performHeavyTaskWithIsolate(SendPort sendPort) {
   //Notify the main isolate that the task is complete
   sendPort.send('Task completed');
 }
+
+// https://learnwithtunde.hashnode.dev/handle-expensive-or-long-running-tasks-with-an-isolate-to-prevent-an-app-from-freezing
