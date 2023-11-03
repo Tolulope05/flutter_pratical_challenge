@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 
@@ -19,6 +20,7 @@ class NameVm extends ChangeNotifier {
 
     _namesGrouped.clear();
     final uniqueNameStrings = _nameList.map((name) => name[0]);
+    log('STRING START ${uniqueNameStrings.toString()}');
 
     for (var firstLetter in uniqueNameStrings) {
       _namesGrouped[firstLetter] = _nameList.where(

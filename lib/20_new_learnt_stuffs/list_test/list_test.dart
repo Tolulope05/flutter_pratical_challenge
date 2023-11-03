@@ -38,7 +38,11 @@ class _AmazingListTestState extends State<AmazingListTest> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //final map = {'theKey': 'theValue'}; // Map<String, String>
+              // var entry = map.entries.first; // MapEntry<String, String>
+              // print(entry.key); // 'theKey'
               Text(entry.key),
+              const SizedBox(height: 8),
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -55,7 +59,8 @@ class _AmazingListTestState extends State<AmazingListTest> {
                 },
                 separatorBuilder: (context, index) => const SizedBox(height: 8),
                 itemCount: entry.value.length,
-              )
+              ),
+              const SizedBox(height: 16),
             ],
           );
         },
