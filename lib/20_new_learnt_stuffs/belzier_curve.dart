@@ -1,6 +1,8 @@
 // Use ClipPath and clip your image.
 
-// Heres the path 
+// Heres the path
+
+import 'package:flutter/material.dart';
 
 class CustomClipPath extends CustomClipper<Path> {
   @override
