@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 // import '20_new_learnt_stuffs/list_test/crude_list_test.dart';
 // import '20_new_learnt_stuffs/list_test/list_test.dart';
 import '15_gabby_aid_learning_pattern/one_custom_triangle_on_rect_card.dart';
-import '20_new_learnt_stuffs/the_solar_system.dart';
+// import '20_new_learnt_stuffs/the_solar_system.dart';
 // import '20_new_learnt_stuffs/pagination_flutter.dart';
 
 void main() {
