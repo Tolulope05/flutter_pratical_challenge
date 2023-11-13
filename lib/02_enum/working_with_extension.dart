@@ -55,3 +55,7 @@ extension ExtraPack on BuildContext {
 extension on String {
   String get cap => "${this[0].toUpperCase()}${substring(1)}";
 }
+
+extension on int {
+  String get toStr => toString();
+}
