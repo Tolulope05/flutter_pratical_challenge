@@ -86,3 +86,25 @@ class DecimalTextInputFormatter extends TextInputFormatter {
     return newValue;
   }
 }
+
+class CurrencyInputFormatter extends TextInputFormatter {
+  CurrencyInputFormatter({this.decimalRange = 2}) : assert(decimalRange >= 0);
+
+  final int decimalRange;
+
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    String nValue = newValue.text;
+    if (nValue.contains('.')) {
+      List<String> split = nValue.split('.');
+      if (split[1].length > decimalRange) {
+        return oldValue;
+      }
+    }
+
+    return newValue;
+  }
+}
