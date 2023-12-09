@@ -128,3 +128,21 @@ class LowerCaseInputFormatter extends TextInputFormatter {
     return newValue.copyWith(text: newValue.text.toLowerCase());
   }
 }
+
+class CapitalizeWordsInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    return newValue.copyWith(text: capitalize(newValue.text));
+  }
+
+  String capitalize(String s) => s.split(' ').map((str) {
+        if (str.isNotEmpty) {
+          return str[0].toUpperCase() + str.substring(1);
+        } else {
+          return '';
+        }
+      }).join(' ');
+}
