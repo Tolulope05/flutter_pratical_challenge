@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 class Person {
   String name;
 
@@ -34,7 +36,7 @@ void main() {
     Person(name: 'C'),
   ];
 
-  print(removeDuplicate(persons));
+  log(removeDuplicate(persons).toString());
 
   // Output: [Person{name: A}, Person{name: B}, Person{name: C}]
 }
