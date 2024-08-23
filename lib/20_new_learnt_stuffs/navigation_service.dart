@@ -116,3 +116,57 @@ class NavigationService {
     navigationKey.currentState!.popUntil(ModalRoute.withName(route));
   }
 }
+
+/**
+class AppRoute {
+  static const homePage = '/home_page';
+
+  static const callingPage = '/calling_page';
+
+  static Route<Object>? generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case homePage:
+        return MaterialPageRoute(
+          builder: (_) => const HomePage(),
+          settings: settings,
+        );
+      case callingPage:
+        return MaterialPageRoute(
+          builder: (_) => const CallingPage(),
+          settings: settings,
+        );
+      default:
+        return null;
+    }
+  }
+}
+*/
+
+/** 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.light(),
+      onGenerateRoute: AppRoute.generateRoute,
+      initialRoute: AppRoute.homePage,
+      navigatorKey: NavigationService.instance.navigationKey,
+      navigatorObservers: <NavigatorObserver>[NavigationService.instance.routeObserver],
+    );
+  }
+*/
+
+
+  String intToTimeLeft(int value) {
+    int h, m, s;
+    h = value ~/ 3600;
+    m = ((value - h * 3600)) ~/ 60;
+    s = value - (h * 3600) - (m * 60);
+    String hourLeft = h.toString().length < 2 ? '0$h' : h.toString();
+    String minuteLeft = m.toString().length < 2 ? '0$m' : m.toString();
+    String secondsLeft = s.toString().length < 2 ? '0$s' : s.toString();
+    String result = "$hourLeft:$minuteLeft:$secondsLeft";
+    return result;
+  }
+
+  print(ModalRoute.of(context)!.settings.arguments);
+   NavigationService.instance.goBack();
